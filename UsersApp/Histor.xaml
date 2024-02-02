@@ -1,0 +1,43 @@
+﻿<Window x:Class="UsersApp.Histor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UsersApp"
+        mc:Ignorable="d"
+          xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Шифр Виженера" Height="600" Width="600">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="15,0,15,0" Background="#fff" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <Grid Margin="0 0 0 20">
+                    <TextBlock Text="Меню" HorizontalAlignment="Center" MaxWidth="295" FontSize="30" FontWeight="Bold" ></TextBlock>
+                </Grid>
+                <Grid>
+                    <Button  Content="Шифровать" Click="Button_Click" MinWidth="200" HorizontalAlignment="Left"/>
+                    <Button  Content="Дешифровать" Click="Button2_Click" MinWidth="200" HorizontalAlignment="Left" Height="32" Margin="290,0,0,0" VerticalAlignment="Top"/>
+                </Grid>
+                <TextBlock Text="История" HorizontalAlignment="Center" MaxWidth="295" FontSize="30" FontWeight="Bold" ></TextBlock>
+                <ListView x:Name="list" Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Шифровали(дешифровали) следующий текст: «"/>
+                                <TextBlock Text="{Binding Text}"/>
+                                <TextBlock Text="», с ключем: «"/>
+                                <TextBlock Text="{Binding Key}"/>
+                                <TextBlock Text="», и получили - «"/>
+                                <TextBlock Text="{Binding Shifr}"/>
+                                <TextBlock Text="»"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

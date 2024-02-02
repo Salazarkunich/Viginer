@@ -1,0 +1,36 @@
+﻿<Window x:Class="UsersApp.UserPageWindow2"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UsersApp"
+        mc:Ignorable="d"
+          xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Шифр Виженера" Height="350" Width="600">
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="15,0,15,0" Background="#fff" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <Grid Margin="0 0 0 20">
+                    <ComboBox x:Name="ComboBox" Margin="350 10 0 0" materialDesign:HintAssist.Hint="Выберите язык" FontSize="13" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120"  SelectionChanged="ComboBox_SelectionChanged" >
+                        <sys:String>Ru</sys:String>
+                        <sys:String>Eng</sys:String>
+                    </ComboBox>
+                    <TextBlock Text="Меню Дешифрования" HorizontalAlignment="Left" MaxWidth="330" FontSize="30" FontWeight="Bold" ></TextBlock>
+                </Grid>
+                <Grid Margin="0 0 0 20">
+                    <TextBox x:Name="message" FontSize="15" FontWeight="Bold" materialDesign:HintAssist.Hint="Введите текс" TextAlignment="Center" HorizontalAlignment="Left" Width="220" Height="30" TextChanged="TextBox_TextChanged"/>
+                    <TextBox x:Name="message2" IsReadOnly="True" FontSize="15" FontWeight="Bold" materialDesign:HintAssist.Hint="Дешифрованный текс" TextAlignment="Center" HorizontalAlignment="Right" Width="220" Height="30" TextChanged="TextBox_TextChanged_1"/>
+                </Grid>
+                <TextBox x:Name="keys" FontSize="15" FontWeight="Bold" materialDesign:HintAssist.Hint="Введите ключ" TextAlignment="Center" HorizontalAlignment="Center" Width="220" Height="30" TextChanged="TextBox_TextChanged_2"/>
+                <Grid>
+                    <Button Margin="0 20 0 0" HorizontalAlignment="Center"  Content="Дешфровать" Click="Button_Click"></Button>
+                    <Button Margin="0 20 20 0" HorizontalAlignment="Right"  Content="Меню" Click="menu" Style="{StaticResource MaterialDesignFlatButton }"></Button>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
